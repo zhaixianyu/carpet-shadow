@@ -7,11 +7,14 @@ import com.carpet_shadow.utility.RandomString;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.Pair;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
@@ -24,6 +27,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.carpet_shadow.zxy.CreateItemShadowing.registerCommand;
 
 public class CarpetShadow implements CarpetExtension, ModInitializer {
 //    public static final Cache<String, Pair<ItemStack, List<Pair<Inventory, Integer>>>> shadowMap = CacheBuilder.newBuilder().weakValues().build();
@@ -51,6 +56,7 @@ public class CarpetShadow implements CarpetExtension, ModInitializer {
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
             Globals.removeInventory(handler.player.getInventory());
         });
+
         CarpetShadow.LOGGER.info("Carpet Shadow Loading!");
     }
 
@@ -79,5 +85,9 @@ public class CarpetShadow implements CarpetExtension, ModInitializer {
         }
         Gson gson = new GsonBuilder().setLenient().create();
         return gson.fromJson(jsonData, new TypeToken<Map<String, String>>() {}.getType());
+    }
+    @Override
+    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandBuildContext) {
+        registerCommand(dispatcher);
     }
 }

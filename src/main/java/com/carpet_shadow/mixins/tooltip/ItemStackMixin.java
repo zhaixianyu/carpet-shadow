@@ -6,8 +6,11 @@ import com.carpet_shadow.newAPI.ShadowNBTData;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.component.ComponentMap;
 import net.minecraft.component.ComponentMapImpl;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -36,8 +39,9 @@ public abstract class ItemStackMixin {
 //        var component = components.get(ShadowNBTData.SHADOW);
 //        if (component != null && component.shouldShowTooltip())
 //            list.add(component.getTooltip());
-        if (((ShadowItem)(Object)this).carpet_shadow$isItShadowItem())
+        if (((ShadowItem)(Object)this).carpet_shadow$isItShadowItem()){
             list.add(this.getComponents().get(ShadowNBTData.SHADOW).getTooltip());
+        }
         return list;
     }
 
