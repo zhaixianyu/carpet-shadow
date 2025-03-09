@@ -30,7 +30,7 @@ import java.util.Map;
 @SuppressWarnings({"unchecked","rawtypes"})
 @Mixin(RecipeManager.class)
 public class RecipeManagerMixin {
-    @Inject(method = "apply(Ljava/util/Map;Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/profiler/Profiler;)V", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/ImmutableMap;builder()Lcom/google/common/collect/ImmutableMap$Builder;", shift = At.Shift.BY, by=2),remap = false)
+    @Inject(method = "apply(Ljava/util/Map;Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/profiler/Profiler;)V", at = @At(value = "INVOKE", target = "Lcom/google/common/collect/ImmutableMap;builder()Lcom/google/common/collect/ImmutableMap$Builder;", shift = At.Shift.BY, by=2))
     private void addShadowRecipe(Map<Identifier, JsonElement> map, ResourceManager resourceManager, Profiler profiler, CallbackInfo ci, @Local(ordinal = 0) ImmutableMultimap.Builder<RecipeType<?>, RecipeEntry<?>> builder, @Local(ordinal = 0) ImmutableMap.Builder<Identifier, RecipeEntry<?>> builder2){
         Identifier identifier = Identifier.of("carpet_shadow","shadow_recipe");
         Recipe<?> recipe = new BookCloningRecipe(CraftingRecipeCategory.MISC) {

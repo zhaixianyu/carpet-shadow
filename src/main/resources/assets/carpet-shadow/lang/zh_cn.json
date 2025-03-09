@@ -1,0 +1,35 @@
+{
+  // 类别:
+  "carpet.category.shadow_items": "物品分身",
+
+  // 规则:
+
+  "carpet.rule.shadowItemMode.name": "物品分身卸载模式",
+  "carpet.rule.shadowItemMode.desc": "卸载时的物品分身操作: ",
+  "carpet.rule.shadowItemMode.extra.0": "UNLINK -> 默认原版（也会禁用模组）",
+  "carpet.rule.shadowItemMode.extra.1": "PERSIST -> 物品分身将在卸载时生存",
+  "carpet.rule.shadowItemMode.extra.2": "VANISH -> 物品分身在卸载时会消失",
+  "carpet.rule.shadowItemIdSize.name": "物品分身Id长度",
+  "carpet.rule.shadowItemIdSize.desc": "物品分身Id长度",
+  "carpet.rule.shadowSuppressionGeneration.name": "物品分身更新抑制生成",
+  "carpet.rule.shadowSuppressionGeneration.desc": "通过更新抑制重新引入 1.19 之前的物品分身生成",
+  "carpet.rule.shadowSuppressionGeneration.extra.0": "免责声明：这不会重新引入旧版更新抑制",
+  "carpet.rule.shadowCraftingGeneration.name": "物品分身制作配方",
+  "carpet.rule.shadowCraftingGeneration.desc": "引入一个制作配方来创建新的物品分身",
+  "carpet.rule.shadowCraftingGeneration.extra.0": "将任何物品堆叠与末影箱结合以生成新的分身堆叠",
+  "carpet.rule.shadowCraftingGeneration.extra.1": "操作将消耗每个组件中的 1 个物品",
+  "carpet.rule.shadowCraftingGeneration.extra.2": "警告：不要用 SHIFT 键移动物品",
+  "carpet.rule.shadowCraftingGeneration.extra.3": "警告：不要在制作网格中关闭 GUI 并有分身堆叠",
+  "carpet.rule.shadowItemTooltip.name": "物品分身ID显示",
+  "carpet.rule.shadowItemTooltip.desc": "在物品名称中显示物品分身 ID",
+  "carpet.rule.shadowItemInventoryFragilityFix.name": "物品分身物品栏移动修复",
+  "carpet.rule.shadowItemInventoryFragilityFix.desc": "防止在基础物品栏移动时断开物品分身",
+  "carpet.rule.shadowItemTransferFragilityFix.name": "物品分身容器转移修复",
+  "carpet.rule.shadowItemTransferFragilityFix.desc": "防止在漏斗-投掷物品转移时断开物品分身",
+  "carpet.rule.shadowItemUpdateFix.name": "物品分身更新修复",
+  "carpet.rule.shadowItemUpdateFix.desc": "物品分身将产生物品栏更新",
+  "carpet.rule.shadowItemPreventCombine.name": "物品分身阻止联合",
+  "carpet.rule.shadowItemPreventCombine.desc": "防止在基础物品栏移动时合并任物品分身",
+  "carpet.rule.shadowItemUseFix.name": "物品分身使用修复",
+  "carpet.rule.shadowItemUseFix.desc": "防止在使用快速补充的分身堆叠时客户端与服务器之间的不同步"
+}
