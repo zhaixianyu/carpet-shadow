@@ -31,6 +31,7 @@ import java.util.Map;
 import static com.carpet_shadow.zxy.CreateItemShadowing.registerCommand;
 
 public class CarpetShadow implements CarpetExtension, ModInitializer {
+    public static final String BEGIN = "shadow_id: ";
 //    public static final Cache<String, Pair<ItemStack, List<Pair<Inventory, Integer>>>> shadowMap = CacheBuilder.newBuilder().weakValues().build();
     public static final Map<String, Pair<ItemStack, List<Pair<Inventory, Integer>>>> shadowMap = new HashMap<>();
     public static final Logger LOGGER = LogManager.getLogger("carpet-shadow");

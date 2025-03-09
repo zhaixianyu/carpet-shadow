@@ -40,7 +40,8 @@ public abstract class ItemStackMixin {
 //        if (component != null && component.shouldShowTooltip())
 //            list.add(component.getTooltip());
         if (((ShadowItem)(Object)this).carpet_shadow$isItShadowItem()){
-            list.add(this.getComponents().get(ShadowNBTData.SHADOW).getTooltip());
+//            DataComponentTypes.LORE
+//            list.add(this.getComponents().get(ShadowNBTData.SHADOW).getTooltip());
         }
         return list;
     }

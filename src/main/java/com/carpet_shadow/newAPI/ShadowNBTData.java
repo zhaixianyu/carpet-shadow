@@ -9,17 +9,17 @@ import net.minecraft.util.Identifier;
 import java.util.function.UnaryOperator;
 
 public class ShadowNBTData {
-    public static final ComponentType<ShadowComponent> SHADOW = register(ShadowComponent.IDENTIFIER, (builder ->
-        builder.codec(ShadowComponent.CODEC)
-                .packetCodec(ShadowComponent.PACKET_CODEC)
-                .cache()
-    ));
+//    public static final ComponentType<ShadowComponent> SHADOW = register(ShadowComponent.IDENTIFIER, (builder ->
+//        builder.codec(ShadowComponent.CODEC)
+//                .packetCodec(ShadowComponent.PACKET_CODEC)
+//                .cache()
+//    ));
 
     //    private static <T> ComponentType<T> register(String id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
     //        return (ComponentType)Registry.register(Registries.DATA_COMPONENT_TYPE, id, ((ComponentType.Builder)builderOperator.apply(ComponentType.builder())).build());
     //    }
 
-    private static <T> ComponentType<T> register(Identifier id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
-        return (ComponentType)Registry.register(Registries.DATA_COMPONENT_TYPE, id, ((ComponentType.Builder)builderOperator.apply(ComponentType.builder())).build());
-    }
+//    private static <T> ComponentType<T> register(Identifier id, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
+//        return (ComponentType)Registry.register(Registries.DATA_COMPONENT_TYPE, id, ((ComponentType.Builder)builderOperator.apply(ComponentType.builder())).build());
+//    }
 }

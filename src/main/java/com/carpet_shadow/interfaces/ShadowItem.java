@@ -2,6 +2,7 @@ package com.carpet_shadow.interfaces;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 
 public interface ShadowItem {
 
@@ -20,7 +21,7 @@ public interface ShadowItem {
 
     boolean carpet_shadow$isItShadowItem();
     String carpet_shadow$getShadowId();
-    boolean carpet_shadow$containsShadowComponent();
+    Text carpet_shadow$getText(String id);
     void carpet_shadow$setShadowId(String id);
     void carpet_shadow$removeShadow();
 
