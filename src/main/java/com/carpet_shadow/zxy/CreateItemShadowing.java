@@ -16,13 +16,14 @@ import net.minecraft.util.Hand;
 
 public class CreateItemShadowing {
     public static void registerCommand(CommandDispatcher<ServerCommandSource> dispatcher){
-        dispatcher.register(CommandManager.literal("itemshadowing")
+        dispatcher.register(CommandManager.literal("craftItemShadowing")
                 .requires(source -> CommandHelper.canUseCommand(source, CarpetShadowSettings.shadowItemMode != CarpetShadowSettings.Mode.UNLINK))
                 .executes(CreateItemShadowing::itemShadowing));
     }
     //制作物品分身
-    private static int itemShadowing(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
+    private static int itemShadowing(CommandContext<ServerCommandSource> context) {
         ServerPlayerEntity player = context.getSource().getPlayer();
+        if(player == null) return -1;
         // 获取主副手上的物品
         ItemStack main = player.getMainHandStack();
         ItemStack off = player.getOffHandStack();
